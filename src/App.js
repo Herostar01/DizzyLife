@@ -1,23 +1,73 @@
-import logo from './logo.svg';
+import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 
-function App() {
+import Home from './components/Home';
+
+import Advice from './components/Advice';
+import Food from './components/Food'; 
+import Specialist from './components/Specialist';
+import Supplements from './components/supplements';
+import CommentForm from './components/CommentForm';
+import Hope from './components/Hope';
+
+
+function App() { 
+
+
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      
+
+      <Switch> 
+
+        
+        
+
+        <Route path="/dizzylife/advice/"> 
+          <Advice />
+        </Route>
+
+        <Route path="/dizzylife/supplements">
+          <Supplements /> 
+        </Route>
+
+        <Route path="/dizzylife/comment">
+          <CommentForm /> 
+        </Route>
+
+        <Route path="/food/"> 
+          <Food /> 
+        </Route>
+
+        <Route path="/hope/"> 
+          <Hope /> 
+        </Route>
+
+        <Route path="/specialist/"> 
+          <Specialist /> 
+        </Route>
+
+        
+
+        
+        
+
+        
+        
+
+        <Route path="/dizzylife">  
+          <Home />
+        </Route>
+
+        <Route path="/">
+          <Redirect to="/dizzylife" /> 
+        </Route>
+
+      </Switch>
+      
     </div>
   );
 }
